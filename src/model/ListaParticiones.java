@@ -1,6 +1,5 @@
 package model;
 
-
 public class ListaParticiones {
 
     private Particion listaParticiones[];
@@ -324,4 +323,71 @@ public class ListaParticiones {
         part.setNombreProceso(p.getNombre());
         return true;
     }
+
+    // ===============================
+// MÉTODOS FALTANTES PARA LA GUI
+// ===============================
+// devuelve el array de particiones
+    public Particion[] getListaParticiones() {
+        return listaParticiones;
+    }
+
+// devuelve cuántas particiones hay realmente llenas
+    public int getnParticionesTotales() {
+        return aParticiones;
+    }
+
+// genera una línea visual de memoria
+    public String generarLineaMemoria() {
+        StringBuilder sb = new StringBuilder();
+
+        // calcular tamaño total de memoria
+        int total = 0;
+        if (aParticiones > 0) {
+            total = listaParticiones[aParticiones - 1].getFinalP() + 1;
+        }
+
+        char[] memoria = new char[total];
+
+        // marcar todo como Libre
+        for (int i = 0; i < total; i++) {
+            memoria[i] = 'L';
+        }
+
+        // marcar las particiones ocupadas
+        for (int i = 0; i < aParticiones; i++) {
+            Particion p = listaParticiones[i];
+
+            if (p.getEstadoP() == 'O') {
+                for (int j = p.getInicioP(); j <= p.getFinalP(); j++) {
+                    memoria[j] = p.getNombreProceso().charAt(0);
+                }
+            }
+        }
+
+        // convertir a string
+        for (char c : memoria) {
+            sb.append(c).append(' ');
+        }
+
+        return sb.toString();
+    }
+
+// genera la línea de índices (opcional)
+    public String generarLineaIndices() {
+        StringBuilder sb = new StringBuilder();
+
+        if (aParticiones == 0) {
+            return "";
+        }
+
+        int total = listaParticiones[aParticiones - 1].getFinalP();
+
+        for (int i = 0; i <= total; i++) {
+            sb.append(i).append(' ');
+        }
+
+        return sb.toString();
+    }
+
 }
