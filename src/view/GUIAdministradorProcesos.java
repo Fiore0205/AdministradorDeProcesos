@@ -462,6 +462,72 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
         this.boxTipoSimulacionTMC = boxTipoSimulacionTMC;
     }
 
+    public JButton getBtnDinamico() {
+        return btnDinamico;
+    }
+
+    public void setBtnDinamico(JButton btnDinamico) {
+        this.btnDinamico = btnDinamico;
+    }
+
+    public JButton getBtnFijo() {
+        return btnFijo;
+    }
+
+    public void setBtnFijo(JButton btnFijo) {
+        this.btnFijo = btnFijo;
+    }
+
+    public JButton getBtnMejorAjuste() {
+        return btnMejorAjuste;
+    }
+
+    public void setBtnMejorAjuste(JButton btnMejorAjuste) {
+        this.btnMejorAjuste = btnMejorAjuste;
+    }
+
+    public JButton getBtnPeorAjuste() {
+        return btnPeorAjuste;
+    }
+
+    public void setBtnPeorAjuste(JButton btnPeorAjuste) {
+        this.btnPeorAjuste = btnPeorAjuste;
+    }
+
+    public JButton getBtnPrimerAjuste() {
+        return btnPrimerAjuste;
+    }
+
+    public void setBtnPrimerAjuste(JButton btnPrimerAjuste) {
+        this.btnPrimerAjuste = btnPrimerAjuste;
+    }
+
+    public JButton getBtnVariable() {
+        return btnVariable;
+    }
+
+    public void setBtnVariable(JButton btnVariable) {
+        this.btnVariable = btnVariable;
+    }
+
+    public String getTxtAreaListaParticiones() {
+        return txtAreaListaParticiones.getText();
+    }
+
+    public void setTxtAreaListaParticiones(String txtAreaListaParticiones) {
+        this.txtAreaListaParticiones.setText(txtAreaListaParticiones);
+    }
+
+    public String getTxtAreaMapaMemoriaParticion() {
+        return txtAreaMapaMemoriaParticion.getText();
+    }
+
+    public void setTxtAreaMapaMemoriaParticion(String txtAreaMapaMemoriaParticion) {
+        this.txtAreaMapaMemoriaParticion.setText(txtAreaMapaMemoriaParticion);
+    }
+    
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -567,6 +633,15 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
         btnVariable = new javax.swing.JButton();
         btnDinamico = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
+        btnPrimerAjuste = new javax.swing.JButton();
+        btnMejorAjuste = new javax.swing.JButton();
+        btnPeorAjuste = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        txtAreaListaParticiones = new javax.swing.JTextArea();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        txtAreaMapaMemoriaParticion = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1368,16 +1443,52 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Algoritmos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dubai", 0, 18))); // NOI18N
 
+        btnPrimerAjuste.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPrimerAjuste.setText("Primer Ajuste");
+
+        btnMejorAjuste.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnMejorAjuste.setText("Mejor Ajuste");
+
+        btnPeorAjuste.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPeorAjuste.setText("Peor Ajuste");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 236, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPeorAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMejorAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrimerAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 216, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(btnPrimerAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(btnMejorAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(btnPeorAjuste, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
+
+        jLabel22.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
+        jLabel22.setText("Lista de Particiones");
+
+        txtAreaListaParticiones.setColumns(20);
+        txtAreaListaParticiones.setRows(5);
+        jScrollPane15.setViewportView(txtAreaListaParticiones);
+
+        jLabel23.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
+        jLabel23.setText("Mapa de Memoria");
+
+        txtAreaMapaMemoriaParticion.setColumns(20);
+        txtAreaMapaMemoriaParticion.setRows(5);
+        jScrollPane16.setViewportView(txtAreaMapaMemoriaParticion);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1388,15 +1499,43 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(543, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22)
+                        .addGap(200, 200, 200))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addGap(55, 55, 55)
+                                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addGap(202, 202, 202)
+                                    .addComponent(jLabel23))))
+                        .addContainerGap(71, Short.MAX_VALUE))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -1526,11 +1665,14 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarProceso;
     private javax.swing.JButton btnFijo;
     private javax.swing.JButton btnIniciar;
+    private javax.swing.JButton btnMejorAjuste;
     private javax.swing.JButton btnModificarMaquina;
     private javax.swing.JButton btnModificarProceso;
     private javax.swing.JButton btnODL;
     private javax.swing.JButton btnPRI;
     private javax.swing.JButton btnParar;
+    private javax.swing.JButton btnPeorAjuste;
+    private javax.swing.JButton btnPrimerAjuste;
     private javax.swing.JButton btnRR;
     private javax.swing.JButton btnTMC;
     private javax.swing.JButton btnVariable;
@@ -1548,6 +1690,8 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1569,6 +1713,8 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1585,6 +1731,7 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
     private javax.swing.JPanel panel_botones_algoritmos;
     private javax.swing.JPanel panel_parent;
     private javax.swing.JTextArea txtAreaListaMaquina;
+    private javax.swing.JTextArea txtAreaListaParticiones;
     private javax.swing.JTextArea txtAreaListaProcesos;
     private javax.swing.JTextArea txtAreaListaRecursos;
     private javax.swing.JTextArea txtAreaListaRecursosMaquina;
@@ -1595,6 +1742,7 @@ public class GUIAdministradorProcesos extends javax.swing.JFrame {
     private javax.swing.JTextArea txtAreaListarRecursosMaquinasODL;
     private javax.swing.JTextArea txtAreaListarRecursosMaquinasPRI;
     private javax.swing.JTextArea txtAreaListarRecursosMaquinasTMC;
+    private javax.swing.JTextArea txtAreaMapaMemoriaParticion;
     private javax.swing.JTextArea txtAreaMemoriaMaquinasODL;
     private javax.swing.JTextArea txtAreaMemoriaMaquinasPRI;
     private javax.swing.JTextArea txtAreaMemoriaMaquinasTMC;

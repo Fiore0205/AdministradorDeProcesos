@@ -176,22 +176,6 @@ public class ListaParticiones {
         }
     }
 
-// COMPACTACIÓN DE MEMORIA
-// Reacomoda particiones ocupadas hacia el inicio
-    public void compactar() {
-        int inicio = 0;
-
-        for (int i = 0; i < aParticiones; i++) {
-            Particion p = listaParticiones[i];
-            if (p.getEstadoP() == 'O') {
-                int tamaño = p.getNUnidadesP();
-                p.setInicioP(inicio);
-                p.setFinalP(inicio + tamaño - 1);
-                inicio = p.getFinalP() + 1;
-            }
-        }
-    }
-
     // PRIMER AJUSTE
     public boolean asignarPrimerAjuste(Proceso p) {
         int tamaño = p.getUnidadesMem();
