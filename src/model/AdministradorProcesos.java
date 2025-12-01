@@ -19,6 +19,14 @@ public class AdministradorProcesos {
     private int tiempoActual;
     private int quantum;
     private int indiceRR;  // índice actual de la cola
+    // Tipo de particiones: 0=fijas, 1=variables, 2=dinamicas
+    private int tipoParticion;
+
+    // Tipo de algoritmo: 0=dinamico, 1=primer ajuste, 2=mejor, 3=peor
+    private int tipoAlgoritmo;
+
+    // UNA SOLA LISTA PARA SIMULACIÓN
+    private ArrayList<Proceso> listaSimulacion;
 
     // Listas para modo estático
     private ArrayList<Proceso> listaEstaticaProcesos;
@@ -30,6 +38,9 @@ public class AdministradorProcesos {
         listaMaquinas = new ListaMaquinas();
         listaEstaticaProcesos = new ArrayList<>();
         listaEstaticaMaquinas = new ArrayList<>();
+        listaSimulacion = new ArrayList<>();
+        tipoParticion = 0;
+        tipoAlgoritmo = 0;
         tiempoActual = 0;
     }
 
@@ -53,6 +64,22 @@ public class AdministradorProcesos {
     public void setQuantum(int q) {
         this.quantum = q;
         this.indiceRR = 0;  // reset cola circular
+    }
+
+    public void setTipoParticion(int tipo) {
+        this.tipoParticion = tipo;
+    }
+
+    public void setTipoAlgoritmo(int tipo) {
+        this.tipoAlgoritmo = tipo;
+    }
+
+    public void agregarProcesoSimulacion(Proceso p) {
+        listaSimulacion.add(p);
+    }
+
+    public ArrayList<Proceso> getListaSimulacion() {
+        return listaSimulacion;
     }
 
     // ============================================================
@@ -658,17 +685,13 @@ public class AdministradorProcesos {
         return ok;
     }
 
-    public void liberarMemoriaProceso(Proceso p) {
-        Maquina m = p.getMaquinaAsignada();
-        if (m == null) {
-            return;
+    public Proceso buscarProcesoPorId(int id) {
+        for (Proceso p : listaProcesos.getLista()) {
+            if (p.getNProceso() == id) {
+                return p;
+            }
         }
-
-        ListaParticiones lp = m.getListaParticiones();
-
-        lp.liberarParticion(p.getNombre());
-        lp.fusionarLibres();
-        // lp.compactar(); // opcional
+        return null;
     }
 
 }

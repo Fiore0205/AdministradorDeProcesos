@@ -109,14 +109,6 @@ public class PanelParticiones extends JPanel {
             actualizarMapa();
         });
 
-        // ---- LIBERAR D2 ----
-        btnLiberar.addActionListener(e -> {
-            Proceso d2 = new Proceso(2, "D2", 1, 0, 5, 20, 0);
-            admin.liberarMemoriaProceso(d2);
-            actualizarTabla();
-            actualizarMapa();
-        });
-
         // ---- FUSIONAR ----
         btnFusionar.addActionListener(e -> {
             maquina.getListaParticiones().fusionarLibres();
